@@ -18,3 +18,10 @@ if emptyString:
   print("'' is truthy")
 else:
   print("'' is not truthy")
+
+emptyList = []
+
+if emptyList:
+  print("[] is truthy")
+else:
+  print("[] is not truthy")
