@@ -1,0 +1,7 @@
+print('Hello world' == "Hello world")
+print("hello".capitalize() == "Hello")
+print("hello".upper() == "HELLO")
+print("hello".replace("e", "a") == "hallo")
+print("hello".isalpha() == True)
+print("123".isdigit() == True)
+print("some,more,values".split(",") == ["some", "more", "values"])
