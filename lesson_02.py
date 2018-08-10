@@ -1,4 +1,4 @@
-def add_numbers(a: int, b: int):
-  print(a + b)
+def add_numbers(a: int, b: int) -> int:
+  return a + b
 
-add_numbers(5, 11)
+print(add_numbers(5, 11))
