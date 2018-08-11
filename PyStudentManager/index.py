@@ -17,6 +17,25 @@ def add_student(name, student_id=332):
   student = {"name": name, "student_id": student_id}
   students.append(student)
 
+def save_file(student):
+  try:
+    f = open("students.txt", "a")
+    f.write(student + "\n")
+    f.close()
+  except Exception:
+    print("Exception trying to save file")
+
+def read_file():
+  try:
+    f = open("students.txt", "r")
+    for student in f.readlines():
+      add_student(student.rstrip("\n"))
+    f.close()
+  except Exception:
+    print("Exception trying to read file")
+
+read_file()
+
 while(True):
   choice = input("Do you want to enter another student? (yes/no): ")
   if choice == "no":
@@ -24,6 +43,7 @@ while(True):
   student_name = input("Enter student name: ")
   student_id = input("Enter student ID: ")
   add_student(student_name, student_id)
+  save_file(student_name)
 
-print("Final list of students:")
+print("All student names:")
 print_students_titlecase()
