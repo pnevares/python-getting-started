@@ -17,11 +17,13 @@ def add_student(name, student_id=332):
   student = {"name": name, "student_id": student_id}
   students.append(student)
 
-
-while len(students) < 5:
+while(True):
+  choice = input("Do you want to enter another student? (yes/no): ")
+  if choice == "no":
+    break
   student_name = input("Enter student name: ")
   student_id = input("Enter student ID: ")
   add_student(student_name, student_id)
-  print_students_titlecase()
 
-print("Five students reached, ending")
+print("Final list of students:")
+print_students_titlecase()
