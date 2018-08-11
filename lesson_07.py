@@ -9,9 +9,11 @@ if "blue" in colors:
 else:
   print("blue is not a color")
 
-print(f"there are {len(colors)} colors")
+print(f"there are {len(colors)} colors:")
+print(colors)
 
 print(f"deleting last color {colors[-1]}")
 del colors[-1]
-print(f"there are {len(colors)} colors")
-print(f"last color is now {colors[-1]}")
+
+print(f"there are {len(colors)} colors:")
+print(colors)
