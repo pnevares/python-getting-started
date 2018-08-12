@@ -14,17 +14,38 @@
       <h1 class="display-4">Welcome to my zoo!</h1>
     </div>
 
-    <h2>All animals:</h2>
-    <ul class="list-group">
-    {% for animal in animals %}
-      <li class="list-group-item d-flex justify-content-between align-items-center">
-        {{ animal.type }}
-        <span class="badge badge-primary badge-pill">
-          {{ animal.count }}
-        </span>
-      </li>
-    {% endfor %}
-    </ul>
+    <div class="row">
+      <div class="col-sm-6">
+        <h2>New animal:</h2>
+        <form method="post">
+          <div class="form-group">
+            <label for="animal_type">Animal type</label>
+            <input type="text" class="form-control" id="animal_type" name="animal_type" aria-describedby="typeHelp" placeholder="Enter animal type">
+            <small id="typeHelp" class="form-text text-muted">Enter the type of your animal (ex: Whale)</small>
+          </div>
+          <div class="form-group">
+            <label for="animal_count">Animal count</label>
+            <input type="number" class="form-control" id="animal_count" name="animal_count" aria-describedby="countHelp" placeholder="Enter animal count">
+            <small id="countHelp" class="form-text text-muted">Enter the count of your animal (ex: 7)</small>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      
+      <div class="col-sm-6">
+        <h2>All animals:</h2>
+        <ul class="list-group">
+        {% for animal in animals %}
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ animal.type }}
+            <span class="badge badge-primary badge-pill">
+              {{ animal.count }}
+            </span>
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
   </div>
 </body>
 </html>

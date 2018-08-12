@@ -10,6 +10,11 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def animals_page():
   if request.method == "POST":
+    animal_type = request.form.get("animal_type")
+    animal_count = request.form.get("animal_count")
+    
+    animals.append({"type": animal_type, "count": animal_count})
+
     return redirect(url_for("animals_page"))
   return render_template("index.html", animals=animals)
 
