@@ -10,12 +10,19 @@ class Animal:
   def __str__(self):
     return f"{self.name} on {self.planet}"
 
+
+class AlienAnimal(Animal):
+  planet = "Mars"
+
+  def talk(self):
+    super().talk()
+    print("...xyzzy")
+
+
 bear = Animal("bear")
 print(bear)
 bear.talk()
 
-human = Animal("human")
-print(human)
-human.talk()
-
-print(Animal.planet)
+martian = AlienAnimal("martian")
+print(martian)
+martian.talk()
